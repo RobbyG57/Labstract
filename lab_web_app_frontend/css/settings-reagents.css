@@ -1,0 +1,159 @@
+/* Main container */
+.settings-page-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-content {
+    flex: 1;
+    position: relative;
+}
+
+/* Reagent Modal */
+.reagent-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.reagent-modal.visible {
+    display: flex;
+    opacity: 1;
+}
+
+.reagent-modal-content {
+    background: #1E2028;
+    border-radius: 12px;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(32, 227, 178, 0.1);
+}
+
+/* Modal Header */
+.reagent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(32, 227, 178, 0.1);
+}
+
+.reagent-header h3 {
+    color: #20E3B2;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.process-name {
+    color: #8A8D98;
+    font-size: 1em;
+}
+
+/* Reagents Grid */
+.reagents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.reagent-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.reagent-tube {
+    margin-bottom: 10px;
+}
+
+.reagent-name {
+    color: #FFFFFF;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.reagent-level-text {
+    color: #8A8D98;
+    font-size: 0.8em;
+}
+
+/* Status Colors */
+.reagent-container.good .reagent-tube svg path {
+    stroke: #20E3B2;
+    fill: #20E3B2;
+}
+
+.reagent-container.warning .reagent-tube svg path {
+    stroke: #FFB302;
+    fill: #FFB302;
+}
+
+.reagent-container.critical .reagent-tube svg path {
+    stroke: #FF4A4A;
+    fill: #FF4A4A;
+}
+
+/* Modal Controls */
+.reagent-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.close-btn {
+    background: transparent;
+    border: 1px solid #20E3B2;
+    color: #20E3B2;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: rgba(32, 227, 178, 0.1);
+}
+
+/* Animations */
+.reagent-level {
+    transition: d 0.3s ease;
+}
+
+@keyframes liquidWave {
+    0%, 100% { d: path('M9 8 L9 16 Q9 19 12 19 Q15 19 15 16 L15 8'); }
+    50% { d: path('M9 7.5 L9 16 Q9 19 12 19 Q15 19 15 16 L15 8.5'); }
+}
+
+.reagent-level.animate {
+    animation: liquidWave 3s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .reagent-modal-content {
+        width: 95%;
+        margin: 10px;
+    }
+
+    .reagents-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 15px;
+    }
+} 

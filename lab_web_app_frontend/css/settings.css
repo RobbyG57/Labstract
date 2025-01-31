@@ -1,0 +1,60 @@
+.settings-container {
+    height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px 40px;
+    gap: 20px;
+}
+
+.settings-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+    padding: 20px 20px;
+    margin-top: -20px;
+}
+
+.settings-button {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: linear-gradient(145deg, #1e2028, #23252f);
+    border: none;
+    border-radius: 8px;
+    padding: 15px 20px;
+    color: #20E3B2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.settings-button:hover {
+    transform: translateX(5px);
+}
+
+.settings-button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Optional: Add some subtle shadows for depth */
+.settings-button {
+    box-shadow: 5px 5px 15px #161821,
+                -5px -5px 15px #262935;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .settings-buttons {
+        width: 90%;
+    }
+    
+    .settings-button {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+} 
