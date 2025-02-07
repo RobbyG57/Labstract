@@ -1,5 +1,5 @@
-import { ResultsGraph } from '/lab_web_app_frontend/js/components/resultsGraph.js';
-import { dataService } from '/lab_web_app_frontend/js/services/dataService.js';
+import { ResultsGraph } from '/js/components/resultsGraph.js';
+import { dataService } from '/js/services/dataService.js';
 
 
 let resultsGraph;
@@ -247,9 +247,9 @@ function updateNavIcons(activeSection) {
         const imgElement = icon.querySelector('img');
         
         if (section === activeSection) {
-            imgElement.src = `/lab_web_app_frontend/assets/icons/${section}-active.svg`;
+            imgElement.src = `/assets/icons/${section}-active.svg`;
         } else {
-            imgElement.src = `/lab_web_app_frontend/assets/${section}-icon.svg`;
+            imgElement.src = `/assets/${section}-icon.svg`;
         }
     });
     

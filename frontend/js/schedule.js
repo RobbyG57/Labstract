@@ -597,7 +597,7 @@ function validateSchedule(schedule) {
 
 async function updateTankSchedule(tankName, schedule) {
     try {
-        const response = await fetch('/lab_web_app_frontend/data/schedule.json');
+        const response = await fetch('/data/schedule.json');
         const scheduleData = await response.json();
         
         // Update the specific tank's schedule
@@ -648,7 +648,7 @@ export async function initializeSchedule() {
         } catch (e) {
             console.log('No saved schedule found in localStorage');
             // If no localStorage data, try to load from file
-            const response = await fetch('/lab_web_app_frontend/data/schedule.json');
+            const response = await fetch('/data/schedule.json');
             scheduleData = await response.json();
         }
         

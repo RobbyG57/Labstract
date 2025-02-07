@@ -2,8 +2,8 @@ export class CacheService {
     constructor() {
         this.CACHE_NAME = 'labstract-data-v1';  // Match the name in sw.js
         this.urlsToCache = [
-            '/lab_web_app_frontend/data/Lapeer_Plating_Plastic.lbst',
-            '/lab_web_app_frontend/data/test-results.json'
+            '/data/Lapeer_Plating_Plastic.lbst',
+            '/data/test-results.json'
         ];
         this.lineConfig = null;
         this.testResults = null;
@@ -13,8 +13,8 @@ export class CacheService {
     async initialize() {
         try {
             const [configResponse, resultsResponse] = await Promise.all([
-                fetch('/lab_web_app_frontend/data/Lapeer_Plating_Plastic.lbst'),
-                fetch('/lab_web_app_frontend/data/test-results.json')
+                fetch('/data/Lapeer_Plating_Plastic.lbst'),
+                fetch('/data/test-results.json')
             ]);
 
             this.lineConfig = await configResponse.json();

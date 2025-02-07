@@ -25,7 +25,7 @@ export class DataService {
 
     async loadPlatingLineData() {
         try {
-            const fileUrl = '/lab_web_app_frontend/data/Lapeer_Plating_Plastic.lbst';
+            const fileUrl = '/data/Lapeer_Plating_Plastic.lbst';
             const data = await this.cache.getCachedData(fileUrl);
             if (!data) throw new Error('Failed to load plating line data from cache');
             return data;  // getCachedData already does the json parsing
@@ -37,7 +37,7 @@ export class DataService {
 
     async loadTestResults() {
         try {
-            const fileUrl = '/lab_web_app_frontend/data/test-results.json';
+            const fileUrl = '/data/test-results.json';
             const data = await this.cache.getCachedData(fileUrl);
             if (!data) throw new Error('Failed to load test results from cache');
             return data;  // getCachedData already does the json parsing

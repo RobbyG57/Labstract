@@ -298,7 +298,7 @@ async function loadHomePage() {
 }
 
 // Update the settings.js click handlers to use hash navigation
-// in lab_web_app_frontend/js/settings.js
+// in /js/settings.js
 function loadSettingPage(settingType) {
     window.location.hash = `settings/${settingType}`;
 }
