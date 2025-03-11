@@ -17,24 +17,24 @@ export class CacheService {
             
             try {
                 [configResponse, resultsResponse] = await Promise.all([
-                    fetch('../data/Lapeer_Plating_Plastic.lbst'),
-                    fetch('../data/test-results.json')
+                    fetch('./data/Lapeer_Plating_Plastic.lbst'),
+                    fetch('./data/test-results.json')
                 ]);
             } catch (error) {
-                console.log('Failed with ../data/ path, trying with data/ path');
-                // Try with a different path format
+                console.log('Failed with ./data/ path, trying with /Labstract/labstract-frontend/data/ path');
+                // Try with GitHub Pages path
                 [configResponse, resultsResponse] = await Promise.all([
-                    fetch('data/Lapeer_Plating_Plastic.lbst'),
-                    fetch('data/test-results.json')
+                    fetch('/Labstract/labstract-frontend/data/Lapeer_Plating_Plastic.lbst'),
+                    fetch('/Labstract/labstract-frontend/data/test-results.json')
                 ]);
             }
             
             // If we still don't have valid responses, try one more path format
             if (!configResponse.ok || !resultsResponse.ok) {
-                console.log('Failed with data/ path, trying with /data/ path');
+                console.log('Failed with GitHub Pages path, trying with relative path');
                 [configResponse, resultsResponse] = await Promise.all([
-                    fetch('/data/Lapeer_Plating_Plastic.lbst'),
-                    fetch('/data/test-results.json')
+                    fetch('data/Lapeer_Plating_Plastic.lbst'),
+                    fetch('data/test-results.json')
                 ]);
             }
 

@@ -1,8 +1,8 @@
 const CACHE_NAME = 'labstract-data-v1';
 const urlsToCache = [
     // Only cache data files
-    './data/Lapeer_Plating_Plastic.lbst',
-    './data/test-results.json'
+    '/Labstract/labstract-frontend/data/Lapeer_Plating_Plastic.lbst',
+    '/Labstract/labstract-frontend/data/test-results.json'
 ];
 
 // Install Service Worker
