@@ -1,0 +1,48 @@
+{
+    "tanks": {
+        "Etch 1": {
+            "process": "Etch",
+            "schedule": {
+                "days": [1, 2, 3, 4, 5],
+                "startTime": "10:00",
+                "interval": {
+                    "hours": 1,
+                    "minutes": 0
+                }
+            }
+        },
+        "Etch 2": {
+            "process": "Etch",
+            "schedule": {
+                "days": [1, 2, 3, 4, 5],
+                "startTime": "11:00",
+                "interval": {
+                    "hours": 1,
+                    "minutes": 0
+                }
+            }
+        },
+        "Acid Copper 1": {
+            "process": "Acid Copper",
+            "schedule": {
+                "days": [1, 2, 3, 4, 5],
+                "startTime": "14:00",
+                "interval": {
+                    "hours": 1,
+                    "minutes": 0
+                }
+            }
+        },
+        "Electroless Copper": {
+            "process": "Electroless",
+            "schedule": {
+                "days": [1, 2, 3, 4, 5],
+                "startTime": "15:30",
+                "interval": {
+                    "hours": 1,
+                    "minutes": 0
+                }
+            }
+        }
+    }
+} 

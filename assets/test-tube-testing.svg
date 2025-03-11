@@ -1,0 +1,48 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <!-- Test Tube Container -->
+    <path d="M40 20 L40 75 Q40 85 50 85 Q60 85 60 75 L60 20 Z" 
+          fill="none" 
+          stroke="#20E3B2" 
+          stroke-width="2"/>
+    
+    <!-- Testing Liquid Animation -->
+    <path class="liquid" 
+          fill="#20E3B2" 
+          opacity="0.6">
+        <animate attributeName="d"
+                 dur="2s"
+                 repeatCount="indefinite"
+                 values="M40 40 L40 75 Q40 85 50 85 Q60 85 60 75 L60 40 Z;
+                         M40 25 L40 75 Q40 85 50 85 Q60 85 60 75 L60 25 Z;
+                         M40 40 L40 75 Q40 85 50 85 Q60 85 60 75 L60 40 Z"/>
+    </path>
+    
+    <!-- Animated Testing Bubbles -->
+    <circle cx="45" cy="42" r="2" fill="white" opacity="0.4">
+        <animate attributeName="cy"
+                 dur="2s"
+                 repeatCount="indefinite"
+                 values="42;25;42"/>
+        <animate attributeName="opacity"
+                 dur="2s"
+                 repeatCount="indefinite"
+                 values="0.4;0;0.4"/>
+    </circle>
+    
+    <circle cx="55" cy="44" r="1.5" fill="white" opacity="0.3">
+        <animate attributeName="cy"
+                 dur="2s"
+                 repeatCount="indefinite"
+                 values="44;27;44"/>
+        <animate attributeName="opacity"
+                 dur="2s"
+                 repeatCount="indefinite"
+                 values="0.3;0;0.3"/>
+    </circle>
+    
+    <!-- Test Tube Top -->
+    <path d="M35 20 L40 20 L60 20 L65 20" 
+          stroke="#20E3B2" 
+          stroke-width="2" 
+          fill="none"/>
+</svg> 

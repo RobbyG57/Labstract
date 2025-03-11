@@ -1,0 +1,28 @@
+<svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+    <!-- Invisible placeholder circle -->
+    <circle 
+        cx="15" 
+        cy="15" 
+        r="15" 
+        fill="none"
+        stroke="none"
+    />
+    <!-- Center aligned original icon -->
+    <g transform="translate(3,3)">
+        <!-- Main tank body -->
+        <path 
+            d="M6 5h12v14H6V5z" 
+            stroke="#1F2833" 
+            stroke-width="2" 
+            stroke-linejoin="round"
+            fill="none"
+        />
+        <!-- Small lip at top -->
+        <path 
+            d="M5 5h14" 
+            stroke="#1F2833" 
+            stroke-width="2" 
+            stroke-linecap="round"
+        />
+    </g>
+</svg> 

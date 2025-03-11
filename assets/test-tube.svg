@@ -1,0 +1,69 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <!-- Test Tube Container -->
+    <path d="M40 20 L40 75 Q40 85 50 85 Q60 85 60 75 L60 20 Z" 
+          fill="none" 
+          stroke="#20E3B2" 
+          stroke-width="2"/>
+    
+    <!-- Animated Liquid with sloshing -->
+    <path class="liquid" 
+          fill="#20E3B2" 
+          opacity="0.6"
+          d="M40 40 L40 75 Q40 85 50 85 Q60 85 60 75 L60 40 Z">
+        <!-- Idle Animation (gentle sloshing) -->
+        <animate attributeName="d"
+                 dur="3s"
+                 repeatCount="indefinite"
+                 values="M40 40 L40 75 Q40 85 50 85 Q60 85 60 75 L60 40 Z;
+                         M40 38 L40 75 Q40 85 50 85 Q60 85 60 75 L60 42 Z;
+                         M40 40 L40 75 Q40 85 50 85 Q60 85 60 75 L60 40 Z"
+                 class="idle-animation"/>
+    </path>
+    
+    <!-- Test Animation Liquid (initially hidden) -->
+    <path class="test-liquid" 
+          fill="#20E3B2" 
+          opacity="0"
+          d="M40 40 L40 75 Q40 85 50 85 Q60 85 60 75 L60 40 Z">
+    </path>
+    
+    <!-- Multiple animated bubbles -->
+    <circle cx="45" cy="42" r="1" fill="white" opacity="0.4" class="bubble">
+        <animate attributeName="cy"
+                 dur="4s"
+                 repeatCount="indefinite"
+                 values="42;39;42"/>
+        <animate attributeName="opacity"
+                 dur="4s"
+                 repeatCount="indefinite"
+                 values="0.4;0.6;0.4"/>
+    </circle>
+    
+    <circle cx="55" cy="44" r="1.2" fill="white" opacity="0.3" class="bubble">
+        <animate attributeName="cy"
+                 dur="3.5s"
+                 repeatCount="indefinite"
+                 values="44;41;44"/>
+        <animate attributeName="opacity"
+                 dur="3.5s"
+                 repeatCount="indefinite"
+                 values="0.3;0.5;0.3"/>
+    </circle>
+    
+    <circle cx="48" cy="43" r="0.8" fill="white" opacity="0.5" class="bubble">
+        <animate attributeName="cy"
+                 dur="5s"
+                 repeatCount="indefinite"
+                 values="43;40;43"/>
+        <animate attributeName="opacity"
+                 dur="5s"
+                 repeatCount="indefinite"
+                 values="0.5;0.7;0.5"/>
+    </circle>
+    
+    <!-- Test Tube Top -->
+    <path d="M35 20 L40 20 L60 20 L65 20" 
+          stroke="#20E3B2" 
+          stroke-width="2" 
+          fill="none"/>
+</svg> 
