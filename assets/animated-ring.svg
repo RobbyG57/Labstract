@@ -1,0 +1,69 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(150,150)">
+        <!-- Orbit 1 (Top) -->
+        <path d="M-60,-120 A130,130 0 0,1 120,-60"
+              stroke="#20E3B2"
+              stroke-width="10"
+              fill="none"
+              stroke-linecap="butt">
+            <animateTransform
+                attributeName="transform"
+                type="rotate"
+                values="0 0 0; 8 0 0; -3 0 0; 0 0 0"
+                dur="8s"
+                repeatCount="indefinite"/>
+        </path>
+
+        <!-- Orbit 2 (Right) -->
+        <path d="M120,-40 A130,130 0 0,1 120,40"
+              stroke="#FF6B6B"
+              stroke-width="10"
+              fill="none"
+              stroke-linecap="butt">
+            <animateTransform
+                attributeName="transform"
+                type="rotate"
+                values="0 0 0; -6 0 0; 4 0 0; 0 0 0"
+                dur="7.5s"
+                repeatCount="indefinite"/>
+        </path>
+
+        <!-- Orbit 3 (Bottom) -->
+        <path d="M60,120 A130,130 0 0,1 -120,60"
+              stroke="#FFD93D"
+              stroke-width="10"
+              fill="none"
+              stroke-linecap="butt">
+            <animateTransform
+                attributeName="transform"
+                type="rotate"
+                values="0 0 0; 10 0 0; -5 0 0; 0 0 0"
+                dur="9s"
+                repeatCount="indefinite"/>
+        </path>
+
+        <!-- Orbit 4 (Left) -->
+        <path d="M-120,40 A130,130 0 0,1 -60,-120"
+              stroke="#FF3B3B"
+              stroke-width="10"
+              fill="none"
+              stroke-linecap="butt">
+            <animateTransform
+                attributeName="transform"
+                type="rotate"
+                values="0 0 0; -12 0 0; 6 0 0; 0 0 0"
+                dur="8.5s"
+                repeatCount="indefinite"/>
+        </path>
+
+        <!-- Overall rotation -->
+        <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="0 0 0"
+            to="360 0 0"
+            dur="60s"
+            repeatCount="indefinite"
+            additive="sum"/>
+    </g>
+</svg> 

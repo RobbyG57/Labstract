@@ -1,0 +1,264 @@
+.settings-page-container {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.setup-header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: linear-gradient(145deg, #1e2028, #23252f);
+    border-bottom: 1px solid rgba(32, 227, 178, 0.1);
+}
+
+.setup-sections {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.setup-card {
+    background: linear-gradient(145deg, #1e2028, #23252f);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 5px 5px 15px #161821,
+                -5px -5px 15px #262935;
+}
+
+.setup-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.setup-section {
+    background: #1E2028;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(32, 227, 178, 0.1);
+}
+
+.setup-section h2 {
+    color: #20E3B2;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+/* Firebase Configuration */
+.firebase-config {
+    margin-bottom: 20px;
+}
+
+.firebase-config label {
+    display: block;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.input-group input {
+    flex: 1;
+    background: #2A2D37;
+    border: 1px solid rgba(32, 227, 178, 0.2);
+    color: #FFFFFF;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.input-group button {
+    background: #20E3B2;
+    color: #1E2028;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.input-group button:hover {
+    background: #1BC698;
+}
+
+/* Process Accordion */
+.process-section {
+    background: #2A2D37;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.process-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(32, 227, 178, 0.1);
+}
+
+.process-header h3 {
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: #20E3B2;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.process-content {
+    display: none;
+    padding: 20px;
+}
+
+.process-section.expanded .process-content {
+    display: block;
+}
+
+/* Tank and Chemical Configuration */
+.tank-section {
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(32, 227, 178, 0.1);
+    padding: 8px;
+}
+
+.tank-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    cursor: pointer;
+    background: rgba(42, 45, 55, 0.3);
+    border-radius: 4px;
+}
+
+.tank-header h4 {
+    color: #20E3B2;
+    margin: 0;
+    font-size: 1em;
+}
+
+.tank-content {
+    display: none;
+    padding: 12px 8px;
+}
+
+.tank-section.expanded .tank-content {
+    display: block;
+}
+
+.chemical-config {
+    background: rgba(30, 32, 40, 0.3);
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.chemical-name {
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.chemical-inputs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(60px, 80px)) auto;
+    gap: 8px;
+    align-items: end;
+}
+
+.chemical-inputs .input-group {
+    flex-direction: column;
+    width: fit-content;
+}
+
+.chemical-inputs label {
+    color: #8A8D98;
+    font-size: 0.8em;
+    margin-bottom: 2px;
+}
+
+.chemical-inputs input {
+    width: 100%;
+    background: #2A2D37;
+    border: 1px solid rgba(32, 227, 178, 0.2);
+    color: #FFFFFF;
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    height: 28px;
+    min-width: 60px;
+    max-width: 80px;
+}
+
+.set-btn {
+    background: #20E3B2;
+    color: #1E2028;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 28px;
+    width: 60px;
+}
+
+.set-btn:hover {
+    background: #1BC698;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .setup-container {
+        padding: 10px;
+    }
+
+    .chemical-inputs {
+        grid-template-columns: 1fr;
+    }
+}
+
+.test-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    cursor: pointer;
+    background: rgba(42, 45, 55, 0.5);
+    border-radius: 6px;
+}
+
+.test-content {
+    display: none;
+    padding: 15px;
+}
+
+.test-section.expanded > .test-content {
+    display: block;
+}
+
+.test-header h5 {
+    color: #20E3B2;
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Indentation for nested levels */
+.process-content {
+    padding-left: 15px;
+}
+
+.test-content {
+    padding-left: 15px;
+} 

@@ -1,0 +1,584 @@
+.settings-page-container {
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Sub-header styles */
+.users-sub-header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: linear-gradient(145deg, #1e2028, #23252f);
+    border-bottom: 1px solid rgba(32, 227, 178, 0.1);
+}
+
+.user-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.circle-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #1e2028, #23252f);
+    box-shadow: 5px 5px 15px #161821,
+                -5px -5px 15px #262935;
+}
+
+.circle-btn img {
+    width: 20px;
+    height: 20px;
+    opacity: 0.9;
+}
+
+.circle-btn.add-user {
+    background: linear-gradient(145deg, #20E3B2, #18B38E);
+}
+
+.circle-btn.add-user img {
+    filter: brightness(0) invert(1);
+}
+
+.circle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 18px #161821,
+                -6px -6px 18px #262935;
+}
+
+.company-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.login-btn {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(32, 227, 178, 0.1);
+    color: #20E3B2;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background: rgba(32, 227, 178, 0.2);
+    transform: translateY(-1px);
+}
+
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #20E3B2, #18B38E);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #1B1D23;
+    font-weight: 600;
+    box-shadow: 0 0 15px rgba(32, 227, 178, 0.2);
+}
+
+/* User cards list */
+.users-list {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    height: calc(100% - 80px); /* Subtract header height */
+}
+
+.user-card {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(145deg, #1e2028, #23252f);
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 15px #161821,
+                -5px -5px 15px #262935;
+}
+
+.user-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 18px #161821,
+                -6px -6px 18px #262935;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #20E3B2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1B1D23;
+    font-weight: 500;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.user-details h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.user-role {
+    color: #20E3B2;
+    font-size: 0.85rem;
+}
+
+.user-email {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+}
+
+/* Base modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Add User Modal specific styles */
+.add-user-modal .modal-content {
+    background: linear-gradient(145deg, #1e2028, #23252f);
+    border-radius: 12px;
+    padding: 20px;
+    width: 90%;
+    max-width: 280px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.add-user-modal h3 {
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    padding-left: 2px;
+}
+
+.add-user-modal .form-group {
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.add-user-modal .form-group label {
+    display: block;
+    color: #20E3B2;
+    margin-bottom: 6px;
+    font-size: 0.8rem;
+    padding-left: 2px;
+}
+
+.add-user-modal .form-group input,
+.add-user-modal .form-group select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid rgba(32, 227, 178, 0.2);
+    border-radius: 6px;
+    background: #1B1D23;
+    color: #fff;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    height: 36px;
+}
+
+.add-user-modal .form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 4.5L6 8L9.5 4.5' stroke='%2320E3B2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+}
+
+.add-user-modal .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.add-user-modal .cancel-btn,
+.add-user-modal .submit-btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    min-width: 70px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-user-modal .cancel-btn,
+.add-user-modal .submit-btn,
+.add-user-modal .form-group select,
+.add-user-modal .form-group input {
+    min-height: 36px;
+}
+
+@media screen and (max-width: 320px) {
+    .add-user-modal .modal-content {
+        width: 95%;
+        padding: 16px;
+    }
+    
+    .add-user-modal .form-group {
+        margin-bottom: 12px;
+    }
+}
+
+/* User Details Modal specific styles */
+.user-details-modal .modal-content {
+    background: linear-gradient(145deg, #1e2028, #23252f);
+    padding: 25px;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.user-details-modal .user-details-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-details-modal .user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #20E3B2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1B1D23;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.user-details-modal h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.user-details-modal .user-role {
+    color: #20E3B2;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+
+/* Button styles */
+.cancel-btn,
+.submit-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.cancel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.submit-btn {
+    background: #20E3B2;
+    color: #1B1D23;
+}
+
+.cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.submit-btn:hover {
+    background: #18B38E;
+}
+
+/* Edit mode styles */
+.user-edit-actions {
+    display: none;
+}
+
+/* Edit indicator styles */
+.edit-indicator {
+    opacity: 0;
+    visibility: hidden;
+    margin-left: 12px;
+    transition: all 0.3s ease;
+}
+
+.edit-indicator img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+}
+
+/* Show edit indicator when in edit mode */
+.users-list.edit-mode .edit-indicator {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Remove any unused styles */
+.edit-action,
+.delete-action {
+    display: none;
+}
+
+/* Style for active edit mode button */
+.circle-btn.edit-users.active {
+    background: rgba(32, 227, 178, 0.2);
+}
+
+.circle-btn.edit-users.active img {
+    filter: brightness(0) saturate(100%) invert(87%) sepia(28%) saturate(757%) hue-rotate(113deg) brightness(97%) contrast(88%);
+}
+
+/* Add these styles for the delete button in modal */
+.delete-user-action {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+}
+
+.delete-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255, 59, 48, 0.1);
+    border: none;
+    border-radius: 6px;
+    color: #ff3b30;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delete-btn img {
+    width: 20px;
+    height: 20px;
+    filter: invert(37%) sepia(94%) saturate(7471%) hue-rotate(353deg) brightness(99%) contrast(135%);
+}
+
+.delete-btn:hover {
+    background: rgba(255, 59, 48, 0.2);
+}
+
+/* Edit modal specific styles */
+.edit-user-modal .modal-content {
+    background: linear-gradient(145deg, #1e2028, #23252f);
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-details-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.user-avatar.large {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+    background: #20E3B2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1B1D23;
+}
+
+.edit-user-modal .form-group {
+    margin-bottom: 16px;
+}
+
+.edit-user-modal .form-group label {
+    display: block;
+    color: #20E3B2;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+}
+
+.edit-user-modal .form-group input,
+.edit-user-modal .form-group select {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(32, 227, 178, 0.2);
+    border-radius: 6px;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.edit-user-modal .form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.edit-user-modal .form-actions button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.delete-user-action {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.delete-btn {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(255, 59, 48, 0.1);
+    border: none;
+    border-radius: 6px;
+    color: #ff3b30;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+    background: rgba(255, 59, 48, 0.2);
+}
+
+/* Add padding to prevent content from touching screen edges */
+@media screen and (max-width: 768px) {
+    .edit-user-modal .modal-content {
+        padding: 20px 16px;
+    }
+    
+    .user-details-header {
+        padding: 16px 0;
+    }
+}
+
+/* Login modal styles */
+.login-modal .modal-content {
+    background: linear-gradient(145deg, #1e2028, #23252f);
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.company-avatar {
+    width: 80px;
+    height: 80px;
+    background: #20E3B2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #1B1D23;
+    margin-bottom: 20px;
+}
+
+.login-modal .form-group {
+    margin-bottom: 16px;
+}
+
+.login-modal .form-group label {
+    display: block;
+    color: #20E3B2;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+}
+
+.login-modal .form-group input {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(32, 227, 178, 0.2);
+    border-radius: 6px;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+.login-modal .form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.login-modal .form-actions button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+/* Add padding for mobile */
+@media screen and (max-width: 768px) {
+    .login-modal .modal-content {
+        padding: 20px 16px;
+    }
+} 
